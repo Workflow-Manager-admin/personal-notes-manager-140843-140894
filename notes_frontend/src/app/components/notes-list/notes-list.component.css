@@ -1,0 +1,46 @@
+.notes-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px 10px 20px;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+}
+.notes-list-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1976d2;
+}
+.notes-list {
+  list-style-type: none;
+  overflow-y: auto;
+  height: calc(100vh - 94px);
+  margin: 0;
+  padding: 0;
+  background: #fff;
+}
+.notes-list li {
+  cursor: pointer;
+  padding: 16px 20px;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+  transition: background 0.15s;
+}
+.notes-list li.selected-note,
+.notes-list li:hover {
+  background: #e3f2fd;
+}
+.note-title {
+  font-weight: 500;
+  color: #222;
+  font-size: 1.1rem;
+}
+.note-date {
+  color: #888;
+  font-size: 0.92rem;
+}
+.empty-list {
+  text-align: center;
+  padding: 32px 0;
+  color: #bdbdbd;
+}

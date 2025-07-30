@@ -1,0 +1,19 @@
+.note-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: #fff;
+  padding: 32px 24px;
+  margin-top: 20px;
+  border-radius: 6px;
+  box-shadow: 0 1px 8px #42424212;
+}
+
+.form-field-title { width: 100%; }
+.form-field-content { width: 100%; }
+.note-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 8px;
+}

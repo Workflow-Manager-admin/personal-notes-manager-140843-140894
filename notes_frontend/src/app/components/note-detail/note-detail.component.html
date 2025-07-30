@@ -1,0 +1,26 @@
+<div *ngIf="!!note; else loading">
+  <ng-container *ngIf="!showEdit; else editForm">
+    <div class="note-actions">
+      <button mat-stroked-button color="accent" (click)="enableEdit()">Edit</button>
+      <button mat-stroked-button color="warn" (click)="deleteNote()">Delete</button>
+      <button mat-icon-button aria-label="Back to list" (click)="goBack()">
+        <span style="font-size:18px;">←</span>
+      </button>
+    </div>
+    <div class="note-detail-content">
+      <h2 class="note-title">{{ note.title || '(Untitled)' }}</h2>
+      <div class="note-meta">
+        <span>
+          Updated: {{ note.updatedAt | date: 'medium' }}
+        </span>
+      </div>
+      <div class="note-content">{{ note.content }}</div>
+    </div>
+  </ng-container>
+  <ng-template #editForm>
+    <app-note-form [note]="note" (save)="onUpdate($event)" (cancel)="showEdit=false"></app-note-form>
+  </ng-template>
+</div>
+<ng-template #loading>
+  <div style="text-align:center;margin:30px;">Loading...</div>
+</ng-template>

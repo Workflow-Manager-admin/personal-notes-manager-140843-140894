@@ -1,0 +1,42 @@
+<div class="app-layout">
+  <aside class="app-sidebar">
+    <app-note-search (search)="onSearch($event)"></app-note-search>
+    <app-notes-list
+      [filter]="searchQuery"
+      [selectedNoteId]="selectedNoteId ?? undefined"
+      (selectNote)="selectNote($event)"
+      (createNote)="createNote()"
+    ></app-notes-list>
+  </aside>
+  <main class="app-content">
+    <header class="app-header">
+      <h1 class="app-title">
+        <span style="color: #1976d2;">Personal Notes</span>
+      </h1>
+      <div class="header-actions">
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="createNote()"
+          aria-label="New Note"
+        >
+          + New Note
+        </button>
+      </div>
+    </header>
+    <section *ngIf="selectedNoteId; else newNoteForm" class="note-detail">
+      <app-note-detail
+        [noteId]="selectedNoteId"
+        (edit)="editNote($event)"
+        (delete)="deleteNote($event)"
+        (back)="deselectNote()"
+      ></app-note-detail>
+    </section>
+    <ng-template #newNoteForm>
+      <app-note-form
+        (save)="saveNewNote($event)"
+        (cancel)="cancelCreate()"
+      ></app-note-form>
+    </ng-template>
+  </main>
+</div>

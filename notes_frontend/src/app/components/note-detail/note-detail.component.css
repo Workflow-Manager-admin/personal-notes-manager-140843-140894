@@ -1,0 +1,30 @@
+.note-detail-content {
+  background: #fff;
+  padding: 32px 24px;
+  border-radius: 6px;
+  box-shadow: 0 1px 8px #42424212;
+  margin-top: 12px;
+}
+.note-title {
+  font-size: 1.8rem;
+  color: #1976d2;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+.note-meta {
+  color: #888;
+  font-size: 0.93rem;
+  margin-bottom: 22px;
+}
+.note-content {
+  color: #222;
+  white-space: pre-wrap;
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+.note-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}

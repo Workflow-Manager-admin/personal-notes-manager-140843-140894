@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
+import { NotesPageComponent } from './pages/notes/notes.page';
 
 @Component({
   selector: 'app-root',
-  imports: [],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
+  standalone: true,
+  imports: [NotesPageComponent]
 })
-export class AppComponent {
-  title = 'notes_frontend is being generated';
-}
+export class AppComponent {}

@@ -1,0 +1,18 @@
+<div class="notes-list-header">
+  <span class="notes-list-title">Your Notes</span>
+  <button mat-icon-button color="accent" aria-label="New note" (click)="create()">
+    <span style="font-size: 20px; font-weight: bold;">+</span>
+  </button>
+</div>
+<ul class="notes-list">
+  <li
+    *ngFor="let note of filteredNotes"
+    [class.selected-note]="note.id === selectedNoteId"
+    (click)="select(note.id)">
+    <div class="note-title">{{ note.title || '(Untitled)' }}</div>
+    <div class="note-date">{{ note.updatedAt | date:'short' }}</div>
+  </li>
+  <li *ngIf="filteredNotes.length === 0" class="empty-list">
+    <em>No notes found.</em>
+  </li>
+</ul>

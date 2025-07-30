@@ -1,0 +1,14 @@
+<form class="note-form" (ngSubmit)="saveNote()">
+  <mat-form-field appearance="outline" class="form-field-title">
+    <mat-label>Title</mat-label>
+    <input matInput [(ngModel)]="title" name="title" maxlength="120" />
+  </mat-form-field>
+  <mat-form-field appearance="outline" class="form-field-content">
+    <mat-label>Content</mat-label>
+    <textarea matInput [(ngModel)]="content" name="content" rows="8"></textarea>
+  </mat-form-field>
+  <div class="note-form-actions">
+    <button mat-flat-button color="primary" type="submit" [disabled]="!title && !content">Save</button>
+    <button mat-stroked-button color="secondary" type="button" (click)="cancelEdit()">Cancel</button>
+  </div>
+</form>
